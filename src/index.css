@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes glowing {
+  0% {
+    opacity: 0%
+  }
+
+  50% {
+    opacity: 100%
+  }
+
+  100% {
+    opacity: 0%
+  }
+}
+
+@keyframes slideIn {
+  from {
+    right: -100%
+  }
+
+  to {
+    right: 0%
+  }
+}
+
+@keyframes slideOut {
+  from {
+    right: 0%
+  }
+
+  to {
+    right: -100%
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 100%
+  }
+
+  to {
+    opacity: 0%
+  }
+}
+
+
+* {
+  overflow: hidden;
+}
+
+.fantasy-text {
+  font-family: 'Inknut Antiqua', serif;
+}
+
+.normal-text {
+  font-family: 'Inter', sans-serif;
+}
+
+.title-holder {
+  position: relative;
+  display: flex;
+  width: 1600px;
+  height: 900px;
+}
+
+.no-overflow-screen {
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+.title-text {
+  text-shadow: 0px 0px 5px rgb(255, 255, 255);
+  transition: 1s;
+}
+
+.title-text:hover {
+  /* text-shadow: 0px 0px 5px rgb(255, 149, 0); */
+  text-shadow: 0px 0px 5px #FFCC9C;
+  background: linear-gradient(0.25turn, #DD7DFF, #FFCC9C);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fading-text {
+  animation-name: glowing;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  user-select: none;
+  /* text-shadow: 0px 0px 10px rgb(255, 149, 0); */
+}
+
+.menu {
+  animation-name: slideIn;
+  animation-duration: 0.7s;
+}
+
+.menu-closed {
+  animation-name: slideOut;
+  animation-duration: 2s;
+}
+
+.menu-item {
+  cursor: pointer;
+  transition: 1s;
+}
+
+.menu-item:hover {
+  background: linear-gradient(0.25turn, #DD7DFF, #FFCC9C);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lobby-screen {
+  background-image: url("/test2.png");
+  object-fit: cover;
+}
+
+.event-card {
+  flex-basis: 30%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.units-screen {
+  /* empty */
+}
+
+.roster {
+  overflow-y: scroll;
+}
+
+.roster::-webkit-scrollbar {
+  width: 13px;
+}
+
+.roster::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+
+.roster::-webkit-scrollbar-thumb {
+  background-color: rgb(160, 160, 160);
+  border-radius: 100px;
+  border: 5px solid rgb(255, 255, 255);
+}
+
+#loadingScreen {
+  background: rgba(255, 255, 255, 1) url('/loadingVideo.gif') no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+.special-text {
+  background: linear-gradient(0.25turn, #DD7DFF, #FFCC9C);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
